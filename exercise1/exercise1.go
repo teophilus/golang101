@@ -2,22 +2,22 @@ package main
 
 import "fmt"
 
-func utopianTree(size int, cycles int) int {
-	i := 0
-		for i < cycles {
-			size = size * 2
-			i = i + 1
-			size = size + 1
-			i = i + 1
-		}
-
-		fmt.Println(i, size)
-
-	return size
+func main() {
+	utopianTree(1, 4)
 }
 
-func main() {
-	utopianTree(1, 0)
-	utopianTree(1, 2)
-	utopianTree(1, 4)
+func utopianTree(size int, cycles int) (int, int) {
+	i := 0
+	for i < cycles {
+		// growth doubles
+		size = size * 2
+		i = i + 1
+		// growth by 1 meter
+		size = size + 1
+		i = i + 1
+	}
+
+	fmt.Println(cycles, size)
+	return i, size
+	
 }
