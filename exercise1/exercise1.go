@@ -3,21 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	utopianTree(1, 4)
+	utopianTree(0)
+	utopianTree(1)
+	utopianTree(2)
+	utopianTree(3)
+	utopianTree(4)
 }
 
-func utopianTree(size int, cycles int) (int, int) {
+func utopianTree(cycles int) int {
 	i := 0
+	size := 1
 	for i < cycles {
 		// growth doubles
 		size = size * 2
-		i = i + 1
+		i++
 		// growth by 1 meter
-		size = size + 1
-		i = i + 1
+		size++
+		i++
+	}
+
+	// account for odd numbers which are half cycles
+	if cycles % 2 == 1 {
+		size = size - 1
 	}
 
 	fmt.Println(cycles, size)
-	return i, size
-	
+	return size
 }
