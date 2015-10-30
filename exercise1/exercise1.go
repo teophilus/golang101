@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	utopianTree(0)
-	utopianTree(1)
-	utopianTree(2)
-	utopianTree(3)
-	utopianTree(4)
+	fmt.Println(utopianTree(0))
+	fmt.Println(utopianTree(1))
+	fmt.Println(utopianTree(2))
+	fmt.Println(utopianTree(3))
+	fmt.Println(utopianTree(4))
 }
 
 func utopianTree(cycles int) int {
@@ -15,7 +15,7 @@ func utopianTree(cycles int) int {
 	size := 1
 	for i < cycles {
 		// growth doubles
-		size = size * 2
+		size *= 2
 		i++
 		// growth by 1 meter
 		size++
@@ -27,6 +27,5 @@ func utopianTree(cycles int) int {
 		size = size - 1
 	}
 
-	fmt.Println(cycles, size)
 	return size
 }
